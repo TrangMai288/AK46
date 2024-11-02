@@ -32,9 +32,9 @@ public class DatePickerTest {
                                         By
                                                 .cssSelector("#byt-datespicker .ui-datepicker-calendar")))
                 .get(0)
-                .findElements(By.tagName("td"))
+                .findElements(By.tagName("a"))
                 .stream()
-                .filter(cell -> cell.getText().contains("31"))
+                .filter(cell -> cell.getText().contains("15"))
                 .findFirst()
                 .ifPresent(WebElement::click);
 
@@ -45,9 +45,9 @@ public class DatePickerTest {
                                         By
                                                 .cssSelector("#byt-datespicker .ui-datepicker-calendar")))
                 .get(1)
-                .findElements(By.tagName("td"))
+                .findElements(By.tagName("a"))
                 .stream()
-                .filter(cell -> cell.getText().contains("5"))
+                .filter(cell -> cell.getText().contains("18"))
                 .findFirst()
                 .ifPresent(WebElement::click);
 
