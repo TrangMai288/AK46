@@ -3,6 +3,7 @@ package theInternet;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -20,7 +21,10 @@ public class HoverTest {
 
     @Test(dataProvider = "testData")
     void ableToHoverImage(int imageIndex,String expectedImageName){
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless=new");
+
+        WebDriver driver = new ChromeDriver(chromeOptions);
         driver.get("https://the-internet.herokuapp.com/hovers");
 
         Actions actions = new Actions(driver);

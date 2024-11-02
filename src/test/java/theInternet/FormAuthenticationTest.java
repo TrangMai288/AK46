@@ -3,6 +3,7 @@ package theInternet;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -20,7 +21,10 @@ public class FormAuthenticationTest {
      */
     @BeforeMethod
     void setup() {
-        driver = new ChromeDriver();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless=new");
+
+        driver = new ChromeDriver(chromeOptions);
     }
 
     @Test

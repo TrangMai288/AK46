@@ -3,6 +3,7 @@ package theInternet;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -13,7 +14,10 @@ import java.time.Duration;
 public class DynamicLoadingPageTest {
     @Test
     void handleLoadingSuccess() {
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless=new");
+
+        WebDriver driver = new ChromeDriver(chromeOptions);
         driver.get("https://the-internet.herokuapp.com/dynamic_loading/1");
 
         driver.findElement(By.xpath("//button[.='Start']")).click();
