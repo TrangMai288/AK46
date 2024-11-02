@@ -1,8 +1,7 @@
 <suite name="WebTable">
     <test name="Chrome Browser">
-        <classes>
-            <class name="theInternet.WebTableTest"/>
-            <class name="theInternet.NestedFrameTest"/>
-        </classes>
+        <packages>
+            <package name="theInternet"/>
+        </packages>
     </test>
 </suite>
