@@ -12,12 +12,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class DropdownTest {
-    /**
-     1. Open browser
-     2. Navigate to https://the-internet.herokuapp.com/dropdown
-     3. Select "option 1"
-     4. Validate "option 1" is selected
-     */
     WebDriver driver;
 
     @BeforeMethod
@@ -39,7 +33,6 @@ public class DropdownTest {
 
     @Test
     void ableSelectMultipleOptions(){
-        driver = new ChromeDriver();
         driver.get("https://output.jsbin.com/osebed/2");
         Select select = new Select(driver.findElement(By.id("fruits")));
 
