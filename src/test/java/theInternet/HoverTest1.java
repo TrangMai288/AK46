@@ -26,7 +26,7 @@ public class HoverTest1 {
                                 .get(1))
                 .perform();
 //        String imageName = driver.findElement(By.xpath("//*[@id='content']//div[@class='figure'][2]//h5")).getText();
-        String imageName = driver.findElements(By.cssSelector(".figcaption h5")).get(0).getText();
+        String imageName = driver.findElements(By.cssSelector(".figcaption h5")).get(1).getText();
         Assert.assertEquals(imageName,"name: user2");
     }
 }

@@ -39,7 +39,10 @@ public class HyperLinkTest {
 
     @Test
     void tc04Update() {
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless=new");
+
+        WebDriver driver = new ChromeDriver(chromeOptions);
         driver.navigate().to("https://the-internet.herokuapp.com/status_codes");
 
         String href = driver.findElement(By.linkText("200")).getAttribute("href");
