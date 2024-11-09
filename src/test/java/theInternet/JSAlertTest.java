@@ -20,7 +20,7 @@ public class JSAlertTest {
     }
 
     @Test
-    void closeJsAlertSuccessfully(){
+    void clickJsAlertSuccessfully(){
         driver.findElement(By.xpath("//button[.='Click for JS Alert']")).click();
 
         driver.switchTo().alert().accept();
@@ -44,7 +44,7 @@ public class JSAlertTest {
     }
 
     @Test
-    void verifyInputJsAlertPromtSuccessfully(){
+    void verifyInputJsAlertPromptSuccessfully(){
         driver.findElement(By.xpath("//button[.='Click for JS Prompt']")).click();
 
         driver.switchTo().alert().sendKeys("hello");
