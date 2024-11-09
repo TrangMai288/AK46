@@ -3,6 +3,7 @@ package theInternet;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -10,7 +11,10 @@ import org.testng.annotations.Test;
 public class DragDropTest {
     @Test
     void successfullyDragA2B(){
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless=new");
+        WebDriver driver = new ChromeDriver(chromeOptions);
+
         driver.get("https://the-internet.herokuapp.com/drag_and_drop");
 
         Actions actions = new Actions(driver);

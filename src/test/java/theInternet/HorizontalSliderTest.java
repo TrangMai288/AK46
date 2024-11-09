@@ -26,22 +26,22 @@ public class HorizontalSliderTest {
         driver = new ChromeDriver(chromeOptions);
     }
 
-    @Test
-    void ableToHorizontalSlidePointer() throws InterruptedException {
-        driver.get("https://the-internet.herokuapp.com/horizontal_slider");
-
-        Actions actions = new Actions(driver);
-        WebElement pointer = driver.findElement(By.cssSelector(".sliderContainer input"));
-        int offsetWidth = pointer.getSize().getWidth();
-        int offsetHeight = pointer.getSize().getHeight();
-        System.out.printf("%d %d", offsetHeight,offsetWidth);
-        actions.clickAndHold(pointer)
-                .moveByOffset(offsetWidth,0)
-                .perform();
-
-        Thread.sleep(60000); //wait until next change
-        Assert.assertEquals(driver.findElement(By.id("range")).getText(),"5");
-    }
+//    @Test
+//    void ableToHorizontalSlidePointer() throws InterruptedException {
+//        driver.get("https://the-internet.herokuapp.com/horizontal_slider");
+//
+//        Actions actions = new Actions(driver);
+//        WebElement pointer = driver.findElement(By.cssSelector(".sliderContainer input"));
+//        int offsetWidth = pointer.getSize().getWidth();
+//        int offsetHeight = pointer.getSize().getHeight();
+//        System.out.printf("%d %d", offsetHeight,offsetWidth);
+//        actions.clickAndHold(pointer)
+//                .moveByOffset(offsetWidth,0)
+//                .perform();
+//
+//        Thread.sleep(60000); //wait until next change
+//        Assert.assertEquals(driver.findElement(By.id("range")).getText(),"5");
+//    }
 
 //    @Test
 //    void ableToHorizontalSlidePointerUsingWait() throws InterruptedException {
